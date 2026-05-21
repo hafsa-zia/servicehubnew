@@ -1,0 +1,429 @@
+/* Clean, professional dashboard styling with scrollbar */
+:root {
+  --primary-color: #1e3a8a;
+  --primary-light: #4a6bff;
+  --text-color: #2c3e50;
+  --text-light: #7f8c8d;
+  --background-color: #f0f7ff;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --scrollbar-width: 8px;
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #c1c1c1;
+  --scrollbar-thumb-hover: #a8a8a8;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Enable scrolling on html and body */
+html, body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Dashboard page wrapper with background */
+.dashboard-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../assets/Admin.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: white;
+}
+
+/* Add semi-transparent overlay for better readability */
+.dashboard-page-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Fixed header */
+.main-header {
+  background-color: rgb(238, 112, 8);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.logo-image {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Content area with padding for fixed header */
+.dashboard-content-area {
+  flex: 1;
+  padding: 90px 20px 20px 20px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dashboard main container */
+.dashboard-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dashboard section styling */
+.dashboard-section {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hero section */
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  order: 1;
+}
+
+.hero-section h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.hero-section .subtitle {
+  color: white;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.primary-button {
+  background-color: rgb(238, 112, 8);
+  color: white;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.primary-button:hover {
+  background-color: #d35400;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* How It Works section */
+.how-it-works-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  min-height: 350px;
+  order: 2;
+}
+
+.how-it-works-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: white;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.step {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4a6bff;
+  color: white;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.step h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.step p {
+  color: white;
+  line-height: 1.5;
+}
+
+/* Popular Services section */
+.popular-services-section {
+  padding: 3rem 2rem;
+  min-height: 400px;
+  order: 3;
+}
+
+.popular-services-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: white;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.service-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: rgb(238, 112, 8);
+  border: 1px solid rgb(238, 112, 8);
+  padding: 0.7rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background-color: rgb(238, 112, 8);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  background-color: rgb(238, 112, 8);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Logout button */
+.logout-button {
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #ff3333;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 0 1rem;
+    height: auto;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .dashboard-content-area {
+    padding-top: 140px;
+  }
+  
+  .steps-container {
+    flex-direction: column;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .how-it-works-section h2,
+  .popular-services-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .service-card {
+    min-height: 220px;
+  }
+}
